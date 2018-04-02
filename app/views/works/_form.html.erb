@@ -1,0 +1,24 @@
+<%= form_for @work do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, :placeholder => 'Title of work', :autofocus => true %>
+
+<%= f.label :field, 'Subject Area' %>
+<%= f.text_field :field, :placeholder => 'Data Science' %>
+
+<%= f.label :description %>
+<%= f.text_area :description, :placeholder => 'Brief description of your work' %>
+
+<%= f.label :tools %>
+<%= f.text_field :tools, :placeholder => 'Pencils, Photoshop etc' %>
+
+<%= f.label :hours %>
+<%= f.number_field :hours, :placeholder => 'How many hours were spent?' %>
+
+<%= f.label :image %>
+<%= f.url_field :image, :placeholder => 'Links to any screenshots or pictures' %>
+
+<%= f.label :user_id, 'Creator' %>
+<%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
+
+<%= f.submit 'Add Work' %>
+<% end %>

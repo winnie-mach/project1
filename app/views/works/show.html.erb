@@ -1,0 +1,18 @@
+<h1><%= @work.title %></h1>
+
+<% unless @work.image.nil? %>
+<%= image_tag @work.image, :alt => @work.title, :title => @work.title, :class => 'feature' %>
+<% end %>
+
+<% unless @work.user.nil? %>
+<p>Creator: <%= link_to @work.user.name, @work.user %></p>
+<% end %>
+<p>Description: <%= @work.description %></p>
+<p>Field: <%= @work.field %></p>
+<p>Hours: <%= @work.hours %></p>
+<p>Tools: <%= @work.tools %></p>
+
+<div class="controls">
+  <%= link_to 'Edit Work', edit_work_path(@work) %>
+  <%= link_to 'Delete Work', @work, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>
