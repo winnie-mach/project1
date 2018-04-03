@@ -1,0 +1,33 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :placeholder => 'hello@ga.com.au', :autofocus => true %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :placeholder => 'John' %>
+
+  <%= f.label :surname %>
+  <%= f.text_field :surname, :placeholder => 'Citizen' %>
+
+  <%= f.label :role %>
+  <%= f.text_field :role, :placeholder => 'Alumini' %>
+
+  <%= f.label :field, 'Subjects Studied'%>
+  <%= f.text_field :field, :placeholder => 'Drawing' %>
+
+  <%= f.label :hobbies %>
+  <%= f.text_area :hobbies, :placeholder => 'Singing, Piano'%>
+
+  <%= f.label :phone %>
+  <%= f.number_field :phone, :placeholder => '0499192019' %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image, :placeholder => 'http://...'%>
+
+  <%# TODO: Work out how to edit password %>
+  <%# f.label :password %>
+  <%# f.text_field :password %>
+
+  <%= f.submit 'Update Profile' %>
+<% end %>

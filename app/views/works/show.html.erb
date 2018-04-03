@@ -12,7 +12,9 @@
 <p>Hours: <%= @work.hours %></p>
 <p>Tools: <%= @work.tools %></p>
 
+<%# if @current_user.id === @work.user.id %>
 <div class="controls">
   <%= link_to 'Edit Work', edit_work_path(@work) %>
   <%= link_to 'Delete Work', @work, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
 </div>
+<%# end %>

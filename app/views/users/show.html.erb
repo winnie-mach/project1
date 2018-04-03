@@ -1,0 +1,49 @@
+<% if @current_user.id === @user.id %>
+<h1>My Profile</h1>
+<% else %>
+<h1><%= "#{@user.name} #{@user.surname}" %></h1>
+<% end %>  <%# Want to show 'My profile' if the profile belongs to the current_user, if not then show the name of the user. %>
+
+<% unless @user.image.nil? %>
+<%= link_to image_tag(@user.image, :alt => @user.name, :title => @user.name) %>
+<% end %>
+
+<p><strong>Name: </strong><%= @user.name %></p>
+<p><strong>Surname: </strong><%= @user.surname %></p>
+<p><strong>Role: </strong><%= @user.role %></p>
+<p><strong>Subjects Studied: </strong><%= @user.field %></p>
+<p><strong>Hobbies: </strong><%= @user.hobbies %></p>
+
+<br>
+
+<div class="contact">
+  <h3>Contact Details: </h3>
+  <p><strong>Phone: </strong><%= @user.phone %></p>
+  <p><strong>Email: </strong><%= @user.email %></p>
+</div>
+
+<div class="works">
+  <% unless @user.works.empty? %>
+    <h3>Works: </h3>
+    <% @user.works.each do |work| %>
+      <% if work.image.present? %>
+        <ul>
+          <li><%= link_to image_tag(work.image, :alt => work.title, :class => 'thumb'), work, :alt => work.title, :title => work.title %>
+          </li>
+        </ul>
+      <% else %>
+        <ul>
+          <li>
+        <%= link_to work.title, work %>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @current_user.id === @user.id %>
+<div class="controls">
+  <%= link_to 'Edit', edit_user_path(@user) %>
+</div>
+<% end %>  <%# only show the edit link if the user that they're looking at is equal to the current_user, don't let logged in user edit anyone else's profile. %>

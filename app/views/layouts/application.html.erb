@@ -13,7 +13,9 @@
       <%= link_to 'Home', root_path %>
       <%= link_to 'Student Works', works_path %>
       <% if @current_user.present? %>
-      <%= link_to "Sign Out #{@current_user.email}", login_path, :method => 'delete' %>
+      <%= link_to 'My Profile', @current_user %> <%# @current_user will go to the @current user's show page. Magic. %>
+      <%= link_to 'Add Work', new_work_path %>
+      <%= link_to "Sign Out #{@current_user.name}", login_path, :method => 'delete' %>
       <% else %>
       <%= link_to 'Sign Up', new_user_path %>
       <%= link_to 'Sign In', login_path %>
