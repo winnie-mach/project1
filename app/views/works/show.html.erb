@@ -1,6 +1,6 @@
 <h1><%= @work.title %></h1>
 
-<% unless @work.image.nil? %>
+<% unless @work.image.empty? %> 
 <%= image_tag @work.image, :alt => @work.title, :title => @work.title, :class => 'feature' %>
 <% end %>
 
@@ -12,9 +12,9 @@
 <p>Hours: <%= @work.hours %></p>
 <p>Tools: <%= @work.tools %></p>
 
-<%# if @current_user.id === @work.user.id %>
+<% if @current_user.id === @work.user.id %>
 <div class="controls">
   <%= link_to 'Edit Work', edit_work_path(@work) %>
   <%= link_to 'Delete Work', @work, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
 </div>
-<%# end %>
+<% end %>

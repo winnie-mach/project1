@@ -25,9 +25,12 @@
   <%= f.label :image %>
   <%= f.url_field :image, :placeholder => 'http://...'%>
 
-  <%# TODO: Work out how to edit password %>
-  <%# f.label :password %>
-  <%# f.text_field :password %>
+  <%# DOESN'T WORK %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 
   <%= f.submit 'Update Profile' %>
 <% end %>

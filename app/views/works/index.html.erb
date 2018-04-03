@@ -3,6 +3,7 @@
 <% @works.each do |work| %>
   <% if work.image.present? %>
     <%= link_to image_tag(work.image, :alt => work.title, :title => work.title, :class => 'thumb'), work %>
-  <% end %>
+  <% else %>
     <%= link_to work.title, work %>
+  <% end %>
 <% end %>

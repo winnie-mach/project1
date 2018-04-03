@@ -16,5 +16,5 @@
 
 class Work < ApplicationRecord
 belongs_to :user, :optional => true
-has_and_belongs_to_many :favourites
+has_many :favourites
 end

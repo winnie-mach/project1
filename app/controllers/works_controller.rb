@@ -9,6 +9,7 @@ class WorksController < ApplicationController
 
   def create
     work = Work.create work_params
+    @current_user.works << work
     redirect_to work
   end
 
@@ -30,6 +31,7 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find params[:id]
+
   end
 
 

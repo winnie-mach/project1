@@ -10,22 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402034206) do
+ActiveRecord::Schema.define(version: 20180403111917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "favourites", force: :cascade do |t|
-    t.text "title"
-    t.text "creater"
-    t.text "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "favourites_works", force: :cascade do |t|
-    t.integer "favourite_id"
     t.integer "work_id"
   end
 

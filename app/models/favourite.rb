@@ -14,6 +14,6 @@
 class Favourite < ApplicationRecord
   belongs_to :user, :optional => true
   #belongs_to :user
-  #validates_uniqness_of :works_id so user can't add same work several times. 
-  has_and_belongs_to_many :works
+  #validates_uniqness_of :works_id so user can't add same work several times.
+  belongs_to :work, :optional => true 
 end

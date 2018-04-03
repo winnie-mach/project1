@@ -17,8 +17,5 @@
 <%= f.label :image %>
 <%= f.url_field :image, :placeholder => 'Links to any screenshots or pictures' %>
 
-<%= f.label :user_id, 'Creator' %>
-<%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
-
-<%= f.submit 'Add Work' %>
+<%= f.submit %>
 <% end %>
