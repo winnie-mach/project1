@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   def index
     @works = Work.all.order(:created_at)
+
   end
 
   def new
@@ -10,6 +11,10 @@ class WorksController < ApplicationController
   def create
     work = Work.create work_params
     @current_user.works << work
+    #raise
+    @cloudinary = Cloudinary::Uploader.upload( params[:work][:image] )
+    work.update :image => @cloudinary["url"]
+    #raise
     redirect_to work
   end
 
@@ -31,7 +36,6 @@ class WorksController < ApplicationController
 
   def show
     @work = Work.find params[:id]
-
   end
 
   private
