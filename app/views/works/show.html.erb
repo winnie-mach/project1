@@ -11,8 +11,8 @@
 <p>Field: <%= @work.field %></p>
 <p>Hours: <%= @work.hours %></p>
 <p>Tools: <%= @work.tools %></p>
-<%# TODO:  %>
-<%# if @user.favourites.where(:user_id => @current_user.id).count == 0 %>
+<%# TODO: Hide/show fav buttons %>
+<%# if Favourites.where(:user_id => @current_user.id).count == 0 %>
   <%= button_to 'Add to Favourites', work_favourite_path(@work), :method => :put %> <%# put request means changing the existing data %>
   <%# else %>
 <%= button_to 'Remove from Favourites', work_favourite_path(@work), :method => :delete %>
