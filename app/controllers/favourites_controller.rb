@@ -1,25 +1,22 @@
 class FavouritesController < ApplicationController
   def show
   end
-  
+
   def create
+    @work = Work.first
     favourite = Favourite.new
-    favourite.work_id = params[:id]
+    favourite.work_id = params[:work_id]
     favourite.user_id = @current_user.id
     favourite.save
-    redirect_to :back, :fallback => root_path
+    redirect_back :fallback_location => root_path, notice: "You favourited #{@work.title}" #redirect_back means to go back to previous page, but rails requires fallback in case it doesn't know where user was previously on.
+  end
+
+  def destroy
+    @current_user.favourites.find_by(:work_id => params[:work_id]).destroy
+    redirect_back :fallback_location => root_path #notice: "You unfavourited #{@work.title}"
   end
 end
 
-end
 
-
-
-
-#     favourites POST   /favourites(.:format)          favourites#create
-#  new_favourite GET    /favourites/new(.:format)      favourites#new
-# edit_favourite GET    /favourites/:id/edit(.:format) favourites#edit
-#      favourite GET    /favourites/:id(.:format)      favourites#show
-#                PATCH  /favourites/:id(.:format)      favourites#update
-#                PUT    /favourites/:id(.:format)      favourites#update
-#                DELETE /favourites/:id(.:format)      favourites#destroy
+# https://stackoverflow.com/questions/13240109/implement-add-to-favorites-in-rails-3-4
+# https://stackoverflow.com/questions/35536293/implement-add-to-favorites-in-ruby-on-rails

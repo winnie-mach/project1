@@ -1,5 +1,13 @@
 <h1>Edit Profile</h1>
 
+<% if @user.errors.any? %>
+<ol>
+  <% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg.capitalize %></li>
+  <% end %>
+</ol>
+<% end %>
+
 <%= form_for @user do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email, :placeholder => 'hello@ga.com.au', :autofocus => true %>
@@ -25,11 +33,10 @@
   <%= f.label :image %>
   <%= f.url_field :image, :placeholder => 'http://...'%>
 
-  <%# DOESN'T WORK %>
-  <%= f.label :password %>
+  <%= f.label :password, 'Change Password'%>
   <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :password_confirmation, 'Re-enter new Password' %>
   <%= f.password_field :password_confirmation %>
 
   <%= f.submit 'Update Profile' %>

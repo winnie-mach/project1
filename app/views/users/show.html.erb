@@ -2,7 +2,7 @@
 <h1>My Profile</h1>
 <% else %>
 <h1><%= "#{@user.name} #{@user.surname}" %></h1>
-<% end %>  <%# Want to show 'My profile' if the profile belongs to the current_user, if not then show the name of the user. %>
+<% end %>  <%# Shows 'My profile' if the profile belongs to the current_user, if not then show the name of the user. %>
 
 <% unless @user.image.nil? %>
 <%= link_to image_tag(@user.image, :alt => @user.name, :title => @user.name) %>
@@ -13,7 +13,7 @@
 <p><strong>Role: </strong><%= @user.role %></p>
 <p><strong>Subjects Studied: </strong><%= @user.field %></p>
 <p><strong>Hobbies: </strong><%= @user.hobbies %></p>
-<%= link_to favourite_path %> <%# DOESN'T WORK %>
+
 <br>
 
 <div class="contact">
@@ -41,6 +41,29 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="favworks">
+  <% unless @favourites.empty? %>
+    <h3>Favourite Works: </h3>
+    <% @favourites.each do |favourite| %>
+      <% if favourite.work.image.present? %>
+        <ul>
+          <li>
+            <%= link_to image_tag(favourite.work.image, :alt =>favourite.work.title, :class => 'thumb'), favourite.work, :alt => favourite.work.title, :title => favourite.work.title %>
+          </li>
+        </ul>
+        <% else %>
+        <ul>
+          <li>
+            <%= link_to favourite.work.title, favourite.work %>
+          </li>
+        </ul>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+
 
 <% if @current_user.id === @user.id %>
 <div class="controls">

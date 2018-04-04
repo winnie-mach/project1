@@ -1,6 +1,6 @@
 <h1><%= @work.title %></h1>
 
-<% unless @work.image.empty? %> 
+<% unless @work.image.empty? %>
 <%= image_tag @work.image, :alt => @work.title, :title => @work.title, :class => 'feature' %>
 <% end %>
 
@@ -11,6 +11,10 @@
 <p>Field: <%= @work.field %></p>
 <p>Hours: <%= @work.hours %></p>
 <p>Tools: <%= @work.tools %></p>
+
+
+<%= button_to 'Add to Favourites', work_favourite_path(@work), :method => :put %> <%# put request means changing the existing data %>
+<%= button_to 'Remove from Favourites', work_favourite_path(@work), :method => :delete %>
 
 <% if @current_user.id === @work.user.id %>
 <div class="controls">

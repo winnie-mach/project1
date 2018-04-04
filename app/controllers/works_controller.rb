@@ -34,8 +34,6 @@ class WorksController < ApplicationController
 
   end
 
-
-
   private
   def work_params
     params.require(:work).permit(:title, :field, :description, :tools, :hours, :image, :user_id)

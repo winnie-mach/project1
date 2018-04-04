@@ -17,17 +17,18 @@ class UsersController < ApplicationController
   end
 
   def update #                PATCH  /users/:id(.:format)           users#update
-    user = User.find params[:id]
+    @user = User.find params[:id]
     #user.update user_params
-    if user.update user_params # user.save
-    redirect_to user 
+    if @user.update user_params # user.save, all in one step. update and saves.
+    redirect_to @user
     else
-      render :edit
+      render :edit #using this data in the update action, render edit page.
     end
   end
 
   def show #           user GET    /users/:id(.:format)           users#show
     @user = User.find params[:id]
+    @favourites = @user.favourites
     #raise :hell
   end
 

@@ -28,20 +28,12 @@ u3 = User.create :name => 'Andrew', :surname =>
 'Matthews', :role => 'Alumini', :field => 'Data Science', :phone => 91011, :email => 'amatthews@ga.co', :password => 'chicken', :image => 'http://richgrad.com/wp-content/uploads/2008/07/andrew-matthews.jpg'
 
 
-Favourite.destroy_all
-f1 = Favourite.create :title => "Jess's favourites"
-f2 = Favourite.create :title => "Rob Fav List"
-
 # Users and Works
 u1.works << w3 << w4 << w9
 u2.works << w1 << w6
 u3.works << w2 << w5 << w7 << w8
 
-#Users and favourites
-u1.favourites << f1
-u2.favourites << f2
+# Users and favourites
 
-#Favourites and works
-f1.works << w2 << w5 << w6 << w8 << w9
-w1.favourites << f1 << f2
-f2.works << w4 << w3 << w7
+
+# Works and favourites
