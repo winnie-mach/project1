@@ -1,11 +1,28 @@
-<h1>Log in</h1>
+<div class="container">
+  <h1>Sign in</h1>
+  <%= form_tag login_path do %> <%# can't use helpers for a form_tag, only a form_for so have to write manually %>
+  <div class="form-row">
+    <h2><%= flash[:error] %></h2>
+    <div class="form-col">
+    </div>
+    <div class="form-col">
+    <%= label_tag :email %>
+  </div>
+  <div class="form-col">
+    <%= email_field_tag :email %>
+  </div>
+  <div class="form-col">
+    <%= label_tag :password %>
+  </div>
+  <div class="form-col">
+    <%= password_field_tag :password %>
+  </div>
 
-<h2><%= flash[:error] %></h2>
-<%= form_tag login_path do %> <%# can't use helpers for a form_tag, only a form_for so have to write manually %>
-<%= label_tag :email %>
-<%= email_field_tag :email %>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
+<div class="form-col">
+  <%= submit_tag 'Log in' %>
+</div>
 
-<%= submit_tag 'Log in' %>
-<% end %>
+  </div>
+  <% end %>
+
+</div>

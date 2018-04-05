@@ -1,17 +1,33 @@
-<h1>Sign Up</h1>
-<% if @user.errors.any? %>
-<ol>
-  <% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg.capitalize %></li>
-  <% end %>
-</ol>
-<% end %> <%# this will print out error messages, a rails method. In the User model, added some validations in there and this will display the error messages. %>
-<%= form_for @user do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email, :required => true %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
-<%= f.submit 'Sign Up!' %>
-<% end %>
+<div class="container">
+  <h1>Sign Up</h1>
+  <% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg.capitalize %></li>
+    <% end %>
+  </ol>
+  <% end %> <%# this will print out error messages, a rails method. In the User model, added some validations in there and this will display the error messages. %>
+  <div class="form-row">
+    <%= form_for @user do |f| %>
+    <div class="form-col">
+    <%= f.label :email %>
+    </div>
+    <div class="form-col">
+    <%= f.email_field :email, :required => true %>
+    </div>
+    <div class="form-col">
+    <%= f.label :password %>
+    </div>
+    <div class="form-col">
+    <%= f.password_field :password %>
+    </div>
+    <div class="form-col">
+    <%= f.label :password_confirmation %>
+    </div>
+    <div class="form-col">
+    <%= f.password_field :password_confirmation %>
+    </div>
+    <%= f.submit 'Sign Up!' %>
+    <% end %>
+  </div>  
+</div>

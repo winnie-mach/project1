@@ -1,26 +1,45 @@
-<h1><%= @work.title %></h1>
+<div class="container">
+  <h1><%= @work.title %></h1>
 
-<% unless @work.image.empty? %>
-<%= image_tag @work.image, :alt => @work.title, :title => @work.title, :class => 'feature' %>
-<%end %>
 
-<% unless @work.user.nil? %>
-<p>Creator: <%= link_to @work.user.name, @work.user %></p>
-<% end %>
-<p>Description: <%= @work.description %></p>
-<p>Field: <%= @work.field %></p>
-<p>Hours: <%= @work.hours %></p>
-<p>Tools: <%= @work.tools %></p>
-<%# TODO: Hide/show fav buttons %>
-<%# if Favourites.where(:user_id => @current_user.id).count == 0 %>
-  <%= button_to 'Add to Favourites', work_favourite_path(@work), :method => :put %> <%# put request means changing the existing data %>
-  <%# else %>
-<%= button_to 'Remove from Favourites', work_favourite_path(@work), :method => :delete %>
-  <%# end %>
 
-<% if @current_user.id === @work.user.id %>
-<div class="controls">
-  <%= link_to 'Edit Work', edit_work_path(@work) %>
-  <%= link_to 'Delete Work', @work, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+
+
+
+
+
+
+<div class="card" style="width: 50rem;">
+    <% unless @work.image.empty? %>
+    <%= image_tag @work.image, :alt => @work.title, :title => @work.title, :class => 'card-image' %>
+    <%end %>
+  <div class="card-body">
+    <% unless @work.user.nil? %>
+    <p class="card-text"><span>Creator: </span><%= link_to @work.user.name, @work.user %></p>
+    <% end %>
+    <p class="card-text"><span>Description: </span><%= @work.description %></p>
+    <p class="card-text"><span>Field: </span><%= @work.field %></p>
+    <p class="card-text"><span>Hours: </span><%= @work.hours %></p>
+    <p class="card-text"><span>Tools: </span><%= @work.tools %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <%# TODO: Hide/show fav buttons %>
+      <%# if Favourites.where(:user_id => @current_user.id).count == 0 %>
+        <%= button_to 'Add to Favourites', work_favourite_path(@work), :method => :put %> <%# put request means changing the existing data %>
+        <%# else %>
+      <%= button_to 'Remove from Favourites', work_favourite_path(@work), :method => :delete %>
+        <%# end %>
+    </li>
+  </ul>
+  <div class="card-body">
+    <div class="card-link">
+      <% if @current_user.id === @work.user.id %>
+        <%= link_to 'Edit Work', edit_work_path(@work) %>
+        <%= link_to 'Delete Work', @work, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
+
+</div>

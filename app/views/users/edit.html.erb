@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Edit Profile</h1>
 
 <% if @user.errors.any? %>
@@ -9,35 +10,46 @@
 <% end %>
 
 <%= form_for @user do |f| %>
+<div class="form-group">
   <%= f.label :email %>
-  <%= f.text_field :email, :placeholder => 'hello@ga.com.au', :autofocus => true %>
-
+  <%= f.text_field :email, :placeholder => 'hello@ga.com.au', :autofocus => true, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name, :placeholder => 'John' %>
-
+  <%= f.text_field :name, :placeholder => 'John', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :surname %>
-  <%= f.text_field :surname, :placeholder => 'Citizen' %>
-
+  <%= f.text_field :surname, :placeholder => 'Citizen', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :role %>
-  <%= f.text_field :role, :placeholder => 'Alumini' %>
-
+  <%= f.text_field :role, :placeholder => 'Alumni', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :field, 'Subjects Studied'%>
-  <%= f.text_field :field, :placeholder => 'Drawing' %>
-
+  <%= f.text_field :field, :placeholder => 'Drawing', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :hobbies %>
-  <%= f.text_area :hobbies, :placeholder => 'Singing, Piano'%>
-
+  <%= f.text_area :hobbies, :placeholder => 'Singing, Piano', :class => 'form-control'%>
+</div>
+<div class="form-group">
   <%= f.label :phone %>
-  <%= f.number_field :phone, :placeholder => '0499192019' %>
-
+  <%= f.number_field :phone, :placeholder => '0499192019', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :image %>
-  <%= f.url_field :image, :placeholder => 'http://...'%>
-
+  <%= f.url_field :image, :placeholder => 'http://...', :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :password, 'Change Password'%>
-  <%= f.password_field :password %>
-
+  <%= f.password_field :password, :class => 'form-control' %>
+</div>
+<div class="form-group">
   <%= f.label :password_confirmation, 'Re-enter new Password' %>
-  <%= f.password_field :password_confirmation %>
-
+  <%= f.password_field :password_confirmation, :class => 'form-control' %>
+</div>
   <%= f.submit 'Update Profile' %>
 <% end %>
+</div>

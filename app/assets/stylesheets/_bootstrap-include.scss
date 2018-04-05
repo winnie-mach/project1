@@ -1,1 +1,117 @@
-@import "bootstrap"
+@import "bootstrap";
+
+// Variables //////
+$rich-black: #0A1128;
+$oxford-blue: #001F54;
+$oxford-blue-02: #0052e0;
+$airforce-blue: #003F91;
+$airforce-blue-02: #3d91ff;
+$cg-blue: #1282A2;
+$bby-powder: #FEFCFB;
+$bby-powder-02: #bdbdbd;
+$purple-hero: #7f248f;
+
+//// Main Body ///////
+body {
+  background-color: $rich-black;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+//Nav Bar
+nav {
+  background-color: $bby-powder-02;
+  .nav-item{
+    padding: 1em;
+    margin: 0 auto;
+    a {
+      color: $airforce-blue;
+    }
+  }
+}
+
+/// Hero ///
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  h1 {
+    font-family: 'Bitter', serif;
+    color: $purple-hero;
+    font-size: 5em;
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+    position: absolute;
+    top: 81%;
+    left: 38%;
+
+  }
+
+}
+
+/// Container ///////
+@include media-breakpoint-up(md) {
+  .container {
+    padding: 1em;
+    margin: 5em auto;
+    background-color: $airforce-blue-02;
+    height: auto;
+    h1 {
+      color: $bby-powder;
+      text-align: center;
+    }
+  }
+ }
+
+
+
+  .row {
+    padding: 50px;
+
+    .col-md {
+      padding: 0;
+      margin: 0 auto;
+
+      .img-thumbnail {
+        // min-width: 11em;
+        // max-width: 12em;
+        // max-height: 15em;
+       object-fit: cover;       /* Scale the image so it covers whole area, thus will likely crop */
+       object-position: center; /* Center the image within the element */
+       height: 300px;
+
+
+      }
+    }
+  }
+
+////// Forms ///////
+  .form-row {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+
+
+  //// Works and Favourites ////
+  .card {
+    margin: 0 auto;
+    .card-image {
+      padding-top: 2em;
+      margin: 0 auto;
+      max-width: 75%; 
+    }
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: $purple-hero;
+    }
+  }
