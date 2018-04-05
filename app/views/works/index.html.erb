@@ -8,7 +8,7 @@
           <div class="col-md">
             <%= link_to image_tag(work.image, :alt => work.title, :title => work.title, :class => ' img-thumbnail'), work %>
            <% else %>
-               <%= link_to work.title, work %>
+               <%= link_to work.title, work, :class => 'anchors' %>
            <% end %>
           </div>
         <% end %>

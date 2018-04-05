@@ -1,4 +1,5 @@
 <div class="container">
+
   <% if @current_user.id === @user.id %>
   <h1>My Profile</h1>
   <% else %>
@@ -25,56 +26,51 @@
     <div class="card-body">
       <div class="card-link">
         <% if @current_user.id === @user.id %>
-          <%= link_to 'Edit', edit_user_path(@user) %> <%# only show the edit link if the user that they're looking at is equal to the current_user, don't let logged in user edit anyone else's profile. %>
+          <%= link_to 'Edit', edit_user_path(@user), :class => 'anchors' %> <%# only show the edit link if the user that they're looking at is equal to the current_user, don't let logged in user edit anyone else's profile. %>
         <% end %>
       </div>
     </div>
   </div>
 
-  <div class="media">
 
-      <% unless @user.works.empty? %>
-        <h3>Works: </h3>
-      <% @user.works.each do |work| %>
-        <% if work.image.present? %>
-        <div class="ml-3">
-          <ul>
-            <p><%= link_to image_tag(work.image, :alt => work.title, :class => 'img-thumbnail'), work, :alt => work.title, :title => work.title %>
-            </p>
-          </ul>
-        </div>
-        <% else %>
-        <div class="ml-3">
-          <ul>
-            <p>
-          <%= link_to work.title, work %>
+  <% unless @user.works.empty? %>
+    <h3>Works </h3>
+    <div class="userworks-favs">
+  <% @user.works.each do |work| %>
+    <% if work.image.present? %>
+      <ul>
+        <p><%= link_to image_tag(work.image, :alt => work.title, :class => 'img-thumbnail'), work, :alt => work.title, :title => work.title %>
         </p>
-          </ul>
-        </div>
-        <% end %>
-      <% end %>
+      </ul>
+    <% else %>
+      <ul>
+        <p>
+      <%= link_to work.title, work, :class => 'anchors' %>
+    </p>
+      </ul>
     <% end %>
-  </div>
+  <% end %>
+<% end %>
+</div>
 
-
-
-  <div class="favworks">
     <% unless @favourites.empty? %>
-      <h3>Favourite Works: </h3>
+      <h3>Favourite Works </h3>
+        <div class="userworks-favs">
       <% @favourites.each do |favourite| %>
         <% if favourite.work.image.present? %>
           <ul>
             <p>
-              <%= link_to image_tag(favourite.work.image, :alt =>favourite.work.title, :class => 'thumb'), favourite.work, :alt => favourite.work.title, :title => favourite.work.title %>
+              <%= link_to image_tag(favourite.work.image, :alt =>favourite.work.title, :class => 'img-thumbnail'), favourite.work, :alt => favourite.work.title, :title => favourite.work.title %>
             </p>
           </ul>
           <% else %>
           <ul>
             <p>
-              <%= link_to favourite.work.title, favourite.work %>
+              <%= link_to favourite.work.title, favourite.work, :class => 'anchors'%>
             </p>
           </ul>
           <% end %>
       <% end %>
+      </div>
     <% end %>
- </div>
+</div>

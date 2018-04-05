@@ -3,6 +3,7 @@
 // Variables //////
 $rich-black: #0A1128;
 $oxford-blue: #001F54;
+$oxford-grey: #526280;
 $oxford-blue-02: #0052e0;
 $airforce-blue: #003F91;
 $airforce-blue-02: #3d91ff;
@@ -22,11 +23,27 @@ nav {
   background-color: $bby-powder-02;
   .nav-item{
     padding: 1em;
-    margin: 0 auto;
+    margin: 0px 10px;
     a {
       color: $airforce-blue;
     }
   }
+}
+
+.button {
+  color:$bby-powder;
+  background-color: $oxford-grey;
+  border-radius: 15px;
+  margin-top: 1em;
+}
+
+.anchors {
+  font-size: 18px;
+  font-family: 'Acme', sans-serif;
+  color: #4320f3;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding-right: 1em;
 }
 
 /// Hero ///
@@ -67,11 +84,18 @@ nav {
     h1 {
       color: $bby-powder;
       text-align: center;
+      font-size: 5em;
+      text-shadow: -2px -2px 0 #000,-2px 2px 0 #000,2px -2px 0 #000,2px 2px 0 #000;
+    }
+    h3 {
+      color: $bby-powder;
+      text-align: center;
+      padding-top: 1em;
     }
   }
  }
 
-
+////// Works Index Page ////////
 
   .row {
     padding: 50px;
@@ -101,13 +125,13 @@ nav {
   }
 
 
-  //// Works and Favourites ////
+  //// User and Work Profile ////
   .card {
     margin: 0 auto;
     .card-image {
       padding-top: 2em;
       margin: 0 auto;
-      max-width: 75%; 
+      max-width: 75%;
     }
     span {
       font-size: 20px;
@@ -115,3 +139,25 @@ nav {
       color: $purple-hero;
     }
   }
+
+//// User Works and User Favourites Gallery ///
+.userworks-favs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 900px;
+
+  ul{
+    padding: 0px;
+  }
+  .img-thumbnail {
+    object-fit: cover;
+    object-position: center;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    line-height: 20px;
+  }
+}
