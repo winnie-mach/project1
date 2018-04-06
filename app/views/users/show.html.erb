@@ -33,25 +33,30 @@
   </div>
 
 
-  <% unless @user.works.empty? %>
-    <h3>Works </h3>
-    <div class="userworks-favs">
-  <% @user.works.each do |work| %>
-    <% if work.image.present? %>
-      <ul>
-        <p><%= link_to image_tag(work.image, :alt => work.title, :class => 'img-thumbnail'), work, :alt => work.title, :title => work.title %>
-        </p>
-      </ul>
-    <% else %>
-      <ul>
-        <p>
-      <%= link_to work.title, work, :class => 'anchors' %>
-    </p>
-      </ul>
-    <% end %>
-  <% end %>
+
+<% unless @user.works.empty? %>
+  <h3>Works: </h3>
+    <div id="carousel-works" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+          <% @user.works.each do |work| %>
+          <% next unless work.image.present? %>
+          <div class="carousel-item <%= "active" if @user.works[0] == work %>">
+                <%= link_to image_tag(work.image, :alt => work.title, :class => 'img-thumbnail'), work, :alt => work.title, :title => work.title %>
+          </div>
+          <% end %>
+      <a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-works" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 <% end %>
-</div>
+
 
     <% unless @favourites.empty? %>
       <h3>Favourite Works </h3>

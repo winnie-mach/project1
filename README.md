@@ -1,24 +1,40 @@
-# README
+# Project 1 Ruby on Rails Database Project Thing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using Ruby on Rails and Active Record to create a website with front and back end. An alumni website where alumni and current students can share their works and
 
-Things you may want to cover:
+## Deployed on Heroku
+Deloyed on Heroku, check out the website [here:](https://aqueous-ocean-44302.herokuapp.com/)
 
-* Ruby version
+## Authors
+Winnie & co. :laughing:
 
-* System dependencies
+## Built With
+I used a few different pieces of software for this, which I've just started learning:
+* HTML
+* css
+* JavaScript
+* Ruby and Rails
+* [jQuery](https://jquery.com/)
+* [Cloudinary](https://cloudinary.com/)
+* Fonts are all from [Google Fonts](https://fonts.google.com/)
 
-* Configuration
+## Known Issues
+* Favourites add and remove button both appear.
+* A few other ones I won't tell you about.
 
-* Database creation
+## Improvements
+* Search Function Running
+* Share feature to social media platforms
+* More animation and better front-end, involving more JavaScript.
+* Needs to look less shit overall.
+* Adding job board, employers, a blog etc. 
 
-* Database initialization
+## Licence
+Licensed under the MIT Licence: https://opensource.org/licenses/MIT
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Acknowledgements
+* Joel Turnbull (Instructor)
+* Theo James (Teacher's Assistant)
+* John Coote (Teacher's Assistant)
+* All my GA classmates
+* My cats 9 and Dustball :kissing_cat:
