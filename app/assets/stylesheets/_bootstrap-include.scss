@@ -121,8 +121,9 @@ nav {
   .container {
     padding: 1em;
     margin: 5em auto;
-    background-color: $airforce-blue-02;
-    opacity: .8;
+    background-color: #7ab4ff;
+    border-radius: 10px;
+    opacity: .7;
     height: auto;
     h1 {
       color: $bby-powder;
@@ -180,6 +181,7 @@ nav {
       max-width: 50%;
       img{
         max-width: 30em;
+        max-height: 30em; 
       }
       }
       span {

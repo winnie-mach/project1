@@ -27,7 +27,8 @@ I used a few different pieces of software for this, which I've just started lear
 * Share feature to social media platforms
 * More animation and better front-end, involving more JavaScript.
 * Needs to look less shit overall.
-* Adding job board, employers, a blog etc. 
+* Adding job board, employers, a blog etc.
+* Admin features (deleting users for example)
 
 ## Licence
 Licensed under the MIT Licence: https://opensource.org/licenses/MIT
