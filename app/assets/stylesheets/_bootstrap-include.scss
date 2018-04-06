@@ -26,7 +26,7 @@ body {
   font-family: 'Merriweather Sans', sans-serif;
 }
 
-//Nav Bar//// 
+//Nav Bar////
 nav {
   background-color: $bby-powder-02;
     .navbar-brand{
@@ -177,14 +177,22 @@ nav {
     .card-image {
       padding-top: 2em;
       margin: 0 auto;
-      max-width: 75%;
+      max-width: 50%;
+      img{
+        max-width: 30em;
+      }
+      }
+      span {
+        font-size: 20px;
+        font-weight: 600;
+        color: $purple-hero;
+      }
+
     }
-    span {
-      font-size: 20px;
-      font-weight: 600;
-      color: $purple-hero;
-    }
-  }
+
+
+
+
 
 ////User Favourites Gallery ///
 .userworks-favs {

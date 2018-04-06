@@ -9,7 +9,7 @@
   <div class="card" style="width: 50rem;">
     <div class="card-image">
       <% unless @user.image.nil? %>
-      <%= link_to image_tag(@user.image, :alt => @user.name, :title => @user.name) %>
+      <%= link_to image_tag(@user.image, :alt => @user.name, :title => @user.name, :class => 'profilepic') %>
       <% end %>
     </div>
     <div class="card-body">
