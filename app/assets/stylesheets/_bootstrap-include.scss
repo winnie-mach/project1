@@ -21,7 +21,7 @@ $icy-blue: #a8ceff;
 
 //// Main Body ///////
 body {
-  background-image: url('BGTexture.png');
+  background: url('BGTexture.png');
   background-repeat: repeat;
   font-family: 'Merriweather Sans', sans-serif;
 }
@@ -181,7 +181,7 @@ nav {
       max-width: 50%;
       img{
         max-width: 30em;
-        max-height: 30em; 
+        max-height: 30em;
       }
       }
       span {
